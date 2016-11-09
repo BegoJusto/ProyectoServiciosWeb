@@ -5,28 +5,30 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace ProyectoServiciosWeb.api {
-    public class AutoresController : ApiController {
-        private AutorService aS;
-        public AutoresController() {
-            aS = new AutorServiceImp();
-        }   
-
+namespace ProyectoServiciosWeb.api
+{
+    public class LibrosController : ApiController
+    {
+        private EjemplarService eS;
+        public LibrosController() {
+            eS = new EjemplarServiceImp();
+        }
         // GET api/<controller>
         public HttpResponseMessage GetAll() {
-            IList<Autor> autores = aS.getAll();
-            var response = Request.CreateResponse<IList<Autor>>(System.Net.HttpStatusCode.OK, autores);
+            IList<Libro> libros = eS.getAll();
+
+            var response = Request.CreateResponse<IList<Libro>>(System.Net.HttpStatusCode.OK, libros);
+
+
             return response;
         }
 
         // GET api/<controller>/5
-        [HttpGet]
         public HttpResponseMessage GetById(int id) {
-
-            Autor autor = aS.getByID(id);
+            IList<Ejemplar> ejemplares = eS.getByIdDeLibro(id);
             HttpResponseMessage response;
-            if (autor != null) {
-                response = Request.CreateResponse<Autor>(System.Net.HttpStatusCode.OK, autor);
+            if (ejemplares != null) {
+                response = Request.CreateResponse<IList<Ejemplar>>(System.Net.HttpStatusCode.OK, ejemplares);
             } else {
                 response = Request.CreateResponse(System.Net.HttpStatusCode.NotFound);
             }
@@ -35,21 +37,18 @@ namespace ProyectoServiciosWeb.api {
         }
 
         // POST api/<controller>
-        [HttpPost]
-        public HttpResponseMessage Post(Autor autor) {
-            aS.create(autor);
+        public HttpResponseMessage Post(Ejemplar ejemplar) {
+            eS.create(ejemplar);
             return Request.CreateResponse(System.Net.HttpStatusCode.Created);
         }
 
         // PUT api/<controller>/5
-        [HttpPut]
-        public HttpResponseMessage Put(Autor autor) {
-            aS.update(autor);
-            return Request.CreateResponse<Autor>(System.Net.HttpStatusCode.OK, autor);
+        public HttpResponseMessage Put(Ejemplar ejemplar) {
+            eS.update(ejemplar);
+            return Request.CreateResponse<Ejemplar>(System.Net.HttpStatusCode.OK, ejemplar);
         }
 
         // DELETE api/<controller>/5
-        [HttpDelete]
         public HttpResponseMessage Delete(int id) {
             return Request.CreateResponse(System.Net.HttpStatusCode.OK);
         }
