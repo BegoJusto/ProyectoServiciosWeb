@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dec2e60d-ab3a-4b75-8a1c-590475f522dd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:54473/WSEjemplarService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WSEjemplarService.xsd" MetadataType="Schema" ID="4f2b9821-471d-4709-be0e-5f61824c1bf5" SourceId="1" SourceUrl="http://localhost:54473/WSEjemplarService.svc?xsd=xsd2" />
+    <MetadataFile FileName="WSEjemplarService1.xsd" MetadataType="Schema" ID="942ca76b-9cf2-439f-9e40-0a1cc5eb7d45" SourceId="1" SourceUrl="http://localhost:54473/WSEjemplarService.svc?xsd=xsd0" />
+    <MetadataFile FileName="WSEjemplarService.disco" MetadataType="Disco" ID="99494a4c-f071-46ea-b9d9-b2f650e881a3" SourceId="1" SourceUrl="http://localhost:54473/WSEjemplarService.svc?disco" />
+    <MetadataFile FileName="WSEjemplarService2.xsd" MetadataType="Schema" ID="5548f99a-e082-43a4-bd06-d3cfa34afb6e" SourceId="1" SourceUrl="http://localhost:54473/WSEjemplarService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WSEjemplarService.wsdl" MetadataType="Wsdl" ID="db69821a-e771-4d83-9a19-19ab3fdb2101" SourceId="1" SourceUrl="http://localhost:54473/WSEjemplarService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
