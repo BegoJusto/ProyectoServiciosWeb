@@ -10,9 +10,10 @@ namespace ProyectoServiciosWeb.api {
         private AutorService aS;
         public AutoresController() {
             aS = new AutorServiceImp();
-        }   
+        }
 
         // GET api/<controller>
+        [HttpGet]
         public HttpResponseMessage GetAll() {
             IList<Autor> autores = aS.getAll();
             var response = Request.CreateResponse<IList<Autor>>(System.Net.HttpStatusCode.OK, autores);

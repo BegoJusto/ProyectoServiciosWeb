@@ -19,6 +19,7 @@ namespace ProyectosServiciosWeb.DAL {
                 cmd.CommandType = CommandType.StoredProcedure;
                 conexion.Open();
                 cmd.Parameters.AddWithValue("@nombreautor", autor.Nombre);
+                cmd.Parameters.AddWithValue("@apellidosautor", autor.Apellidos);
                 cmd.Parameters.Add("@idAutor", SqlDbType.Int).Direction = ParameterDirection.Output;
                 cmd.ExecuteNonQuery();
                 autor.CodAutor = Convert.ToInt32(cmd.Parameters["@idAutor"].Value);
@@ -106,6 +107,7 @@ namespace ProyectosServiciosWeb.DAL {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@idAutor", autor.CodAutor);
                 cmd.Parameters.AddWithValue("@nombreAutor", autor.Nombre);
+                cmd.Parameters.AddWithValue("@apellidosAutor", autor.Apellidos);
                 cmd.ExecuteNonQuery();
             }
             return autor;
@@ -116,7 +118,8 @@ namespace ProyectosServiciosWeb.DAL {
         {
             Autor autor = new Autor();
             autor.CodAutor = Convert.ToInt32(reader["idAutor"]);
-            autor.Nombre = reader["nombreAutor"].ToString();
+            autor.Nombre = Convert.ToString(reader["nombreAutor"]);
+            autor.Apellidos = Convert.ToString(reader["apellidosAutor"]);
             return autor;
         }
     }

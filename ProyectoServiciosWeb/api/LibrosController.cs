@@ -9,9 +9,9 @@ namespace ProyectoServiciosWeb.api
 {
     public class LibrosController : ApiController
     {
-        private EjemplarService eS;
+        private LibroService eS;
         public LibrosController() {
-            eS = new EjemplarServiceImp();
+            eS = new LibroServiceImp();
         }
         // GET api/<controller>
         public HttpResponseMessage GetAll() {
@@ -25,13 +25,10 @@ namespace ProyectoServiciosWeb.api
 
         // GET api/<controller>/5
         public HttpResponseMessage GetById(int id) {
-            IList<Ejemplar> ejemplares = eS.getByIdDeLibro(id);
+         //   IList<Ejemplar> ejemplares = eS.getByIdDeLibro(id);
             HttpResponseMessage response;
-            if (ejemplares != null) {
-                response = Request.CreateResponse<IList<Ejemplar>>(System.Net.HttpStatusCode.OK, ejemplares);
-            } else {
-                response = Request.CreateResponse(System.Net.HttpStatusCode.NotFound);
-            }
+            response = Request.CreateResponse(System.Net.HttpStatusCode.NotFound);
+           
 
             return response;
         }

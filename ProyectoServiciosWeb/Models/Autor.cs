@@ -6,7 +6,8 @@ namespace ProyectosServiciosWeb.Models {
        
         private int _codAutor;
         private string _nombre;
-        //private string apellidos;
+       
+        private string _apellidos {get; set;}
 
         public Autor()
         {
@@ -33,16 +34,24 @@ namespace ProyectosServiciosWeb.Models {
         {
             get
             {
-                return _nombre;
+                return _nombre.Trim();
             }
 
             set
             {
-                _nombre = value;
+                _nombre = value.Trim();
+            }
+        }
+        public string Apellidos {
+            get {
+                return _apellidos.Trim();
+            }
+
+            set {
+                _apellidos = value.Trim();
             }
         }
 
-       
 
     }
 }
